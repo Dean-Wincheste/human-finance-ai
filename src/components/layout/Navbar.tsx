@@ -61,13 +61,21 @@ export const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* Auth Buttons */}
+          <div className="hidden md:flex items-center gap-3">
+            <Button 
+              variant={isHome ? "heroOutline" : "outline"}
+              size="sm"
+              onClick={() => navigate('/auth?mode=signin')}
+            >
+              Sign In
+            </Button>
             <Button 
               variant={isHome ? "hero" : "default"}
-              onClick={() => navigate('/chat')}
+              size="sm"
+              onClick={() => navigate('/auth?mode=login')}
             >
-              Start Application
+              Login
             </Button>
           </div>
 
@@ -106,16 +114,30 @@ export const Navbar = () => {
                   {link.label}
                 </button>
               ))}
-              <Button 
-                variant="hero" 
-                className="mt-2"
-                onClick={() => {
-                  navigate('/chat');
-                  setIsOpen(false);
-                }}
-              >
-                Start Application
-              </Button>
+              <div className="flex gap-3 mt-2">
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="flex-1"
+                  onClick={() => {
+                    navigate('/auth?mode=signin');
+                    setIsOpen(false);
+                  }}
+                >
+                  Sign In
+                </Button>
+                <Button 
+                  variant="hero" 
+                  size="sm"
+                  className="flex-1"
+                  onClick={() => {
+                    navigate('/auth?mode=login');
+                    setIsOpen(false);
+                  }}
+                >
+                  Login
+                </Button>
+              </div>
             </div>
           </div>
         )}
