@@ -30,10 +30,8 @@ export const HeroSection = () => {
           {/* Main heading */}
           <h1 className="font-display text-5xl md:text-7xl font-bold text-primary-foreground mb-6 animate-slide-up">
             Meet{" "}
-            <span className="relative">
-              <span className="text-gradient bg-gradient-to-r from-accent to-accent/70 bg-clip-text text-transparent">
-                TARA
-              </span>
+            <span className="text-accent">
+              TARA
             </span>
           </h1>
 
